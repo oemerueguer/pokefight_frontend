@@ -6,16 +6,16 @@ export default function Instruction() {
     <>
       <div className="gameboy">
         <div className="gameboyScreen">
-          <h2>Welcome to our Pokemon World </h2>
+          <h2>Welcome to our PokeBattle </h2>
           <h3>Read and then start the game </h3>
           <p>
             First of all, you need to choose a Pokemon by selecting on the
-            desired pokemon and clicking SELECT. Afterwards, I have to choose
+            desired pokemon and clicking SELECT. Afterwards, choose
             another one with whom you want to fight with. Finally, you can click
             on FIGHT button.
             <br />
             <br />
-            To start, click on A Button.
+            To start the game, click on A Button.
           </p>
         </div>
         <div className="gameboyGrey"></div>
