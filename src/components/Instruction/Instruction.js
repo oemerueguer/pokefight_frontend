@@ -37,7 +37,6 @@ export default function Instruction() {
          <Link to="/home"><button className="aPress">A</button></Link>
           <button className="bPress">B</button>
         </div>
-      </div>
     </>
   );
 }
