@@ -3,12 +3,12 @@ import PokeList from './PokeList';
 import SearchBar from './SearchBar';
 import './HomePage.css';
 
-export default function HomePage({data, query, setQuery}) {
+export default function HomePage({data, filter, selection, setFilter}) {
   return (
     <div className="home">
-      <SearchBar query={query} setQuery={setQuery}/>
-      <HomeTypeIcons />
-      <PokeList data={data}/>
+      <SearchBar filter={filter} setFilter={setFilter}/>
+      <HomeTypeIcons setFilter={setFilter}/>
+      <PokeList data={data} selection={selection} filter={filter}/>
     </div>
   );
 }
