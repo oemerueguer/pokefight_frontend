@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Switch, Route } from 'react-router';
 import HomePage from './components/HomePage/HomePage';
 import Instruction from './components/Instruction/Instruction'
+import Footer from './components/Footer/Footer';
 import Pokemon from './components/Pokemon/Pokemon';
 import './App.css';
 import axios from 'axios';
@@ -27,6 +28,7 @@ function App() {
         <Route exact path="/"><Instruction /></Route>
         <Route exact path="/home" ><HomePage data={data} filter={filter} setFilter={setFilter} /></Route>
         <Route exact path="/pokemon/:id"><Pokemon /></Route>
+        <Route exact path= "/footer"><Footer /></Route>
       </Switch>
     </div>
   );
