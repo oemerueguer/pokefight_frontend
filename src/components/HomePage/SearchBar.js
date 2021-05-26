@@ -1,3 +1,5 @@
+import './HomePage.css';
+
 export default function SearchBar({filter, setFilter}) {
     
     const handleChange = (e) => {
@@ -6,7 +8,7 @@ export default function SearchBar({filter, setFilter}) {
     
     return (
         <div className="searchbar">
-            <input type="text" value={filter} onChange={handleChange} placeholder="type or pokemon" />
+            <input type="text" value={filter} onChange={handleChange} placeholder="enter name/type" className="user-input"/>
         </div>
     );
 }

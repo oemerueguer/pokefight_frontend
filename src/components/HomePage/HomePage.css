@@ -1,3 +1,7 @@
+.user-input {
+    font-family: 'Karma', sans-serif;
+}
+
 .wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -32,6 +36,7 @@
 }
 
 .tool-tip {
+    font-family: 'Karma', sans-serif;
     position: absolute;
     left: 0;
     right: 0;
@@ -128,4 +133,10 @@
 .water {
     background: #539DDF;
     box-shadow: 0 0 20px #539DDF;
+}
+
+.pokelist {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }

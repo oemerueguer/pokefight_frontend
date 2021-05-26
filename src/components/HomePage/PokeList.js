@@ -26,6 +26,7 @@ export default function PokeList({ data, filter }) {
 
   return (
     <div className="pokelist">
+      {/* <h2>Current Device Type: {point}</h2> */}
       {randSelection.length > 0
         ? randSelection.map(pokemon => <p>{pokemon.name.english}</p>)
         : <p>catching pokemons...</p>
