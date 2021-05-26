@@ -34,9 +34,10 @@ export default function Instruction() {
           </button>
         </div>
         <div className="PressBoard">
-         <Link to="/home"><button className="aPress">A</button></Link>
+          <Link to="/home"><button className="aPress">A</button></Link>
           <button className="bPress">B</button>
         </div>
+      </div>
     </>
   );
 }
