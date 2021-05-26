@@ -10,6 +10,11 @@ import {
 } from "mdb-react-ui-kit";
 
 export default function Pokemon(props) {
+  const handleClick = () => {
+    const pokemonId = props.pokemon.id;
+    props.handleAddPokemon(pokemonId);
+  };
+
   return (
     <div className="wrapper">
       <MDBCol>
@@ -56,7 +61,7 @@ export default function Pokemon(props) {
               <br />
             </MDBCardText>
             <hr />
-            <MDBBtn href="#">Fight</MDBBtn>
+            <MDBBtn onClick={handleClick}>Select</MDBBtn>
           </MDBCardBody>
         </MDBCard>
       </MDBCol>

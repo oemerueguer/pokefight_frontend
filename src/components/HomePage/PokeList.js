@@ -1,7 +1,14 @@
 import "./HomePage.css";
+import { useState } from "react";
 import Pokemon from "../Pokemon/Pokemon";
+import PokemonsToFight from "../Pokemon/PokemonsToFight";
 
 export default function PokeList({ data, filter }) {
+  const [firstPokemon, setFirstPokemon] = useState(0);
+  const [secondPokemon, setSecondPokemon] = useState(0);
+  const [ourPokemon, setOurPokemon] = useState(false);
+  const [opponentPokemon, setOpponentPokemon] = useState(false);
+
   let randSelection = [];
   if (data && !filter) {
     let pokemons = data;
@@ -32,15 +39,56 @@ export default function PokeList({ data, filter }) {
     console.log(randSelection);
   }
 
+  const handleAddPokemon = (pokemonId) => {
+    if (!ourPokemon) {
+      setFirstPokemon(pokemonId);
+      setOurPokemon(true);
+    } else {
+      if (!opponentPokemon) {
+        setSecondPokemon(pokemonId);
+        setOpponentPokemon(true);
+      }
+    }
+  };
+
+  const handleRemovePokemon = (
+    firstPokemonId,
+    secondPokemonId,
+    firstPokemonBoolean,
+    secondPokemonBoolean
+  ) => {
+    setFirstPokemon(firstPokemonId);
+    setSecondPokemon(secondPokemonId);
+    setOurPokemon(firstPokemonBoolean);
+    setOpponentPokemon(secondPokemonBoolean);
+  };
+
   return (
-    <div className="wrapper">
-      {randSelection.length > 0 ? (
-        randSelection.map((pokemon) => {
-          return <Pokemon pokemon={pokemon} />;
-        })
-      ) : (
-        <p>catching pokemons...</p>
-      )}
-    </div>
+    <>
+      <div>
+        <br />
+        <br />
+        <PokemonsToFight
+          firstPokemon={firstPokemon}
+          secondPokemon={secondPokemon}
+          ourPokemon={ourPokemon}
+          opponentPokemon={opponentPokemon}
+          handleRemovePokemon={handleRemovePokemon}
+        />
+        <br />
+        <br />
+      </div>
+      <div className="wrapper">
+        {randSelection.length > 0 ? (
+          randSelection.map((pokemon) => {
+            return (
+              <Pokemon pokemon={pokemon} handleAddPokemon={handleAddPokemon} />
+            );
+          })
+        ) : (
+          <p>catching pokemons...</p>
+        )}
+      </div>
+    </>
   );
 }
