@@ -18,8 +18,10 @@ export default function Pokemon(props) {
             className="img-fluid"
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.pokemon.id}.png`}
           />
+          <hr />
           <MDBCardBody>
             <MDBCardTitle>{props.pokemon.name.english}</MDBCardTitle>
+            <hr />
             <MDBCardText>
               <span>
                 HP:{"  "}
@@ -53,6 +55,7 @@ export default function Pokemon(props) {
               <br />
               <br />
             </MDBCardText>
+            <hr />
             <MDBBtn href="#">Fight</MDBBtn>
           </MDBCardBody>
         </MDBCard>
