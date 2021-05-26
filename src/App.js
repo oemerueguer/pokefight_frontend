@@ -1,8 +1,7 @@
 import './App.css';
 import axios from 'axios';
-import HeaderExampleUsersIcon from './components/header';
-import Nav from './components/navBar';
-import About from './components/about';
+import HeaderExampleUsersIcon from './components/Header/header';
+import Nav from './components/NavBar/navBar';
 import { useState, useEffect } from 'react'
 import { Switch, Route, useLocation } from 'react-router-dom';
 import HomePage from './components/HomePage/HomePage';
@@ -29,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      {location.pathname != "/" &&
+      {location.pathname !== "/" &&
         <>
           <HeaderExampleUsersIcon />
           <Nav />
@@ -37,7 +36,6 @@ function App() {
       }
       <Switch>
         <Route exact path="/"><Instruction /></Route>
-        <Route exact path="/about"><About /></Route>
         <Route exact path="/home" ><HomePage data={data} filter={filter} setFilter={setFilter} /></Route>
         <Route exact path="/pokemon/:id"><Pokemon /></Route>
       </Switch>
@@ -45,11 +43,5 @@ function App() {
     </div>
   );
 }
-
-const Home = () => {
-  <div>
-    <h1>Home</h1>
-  </div>;
-};
 
 export default App;

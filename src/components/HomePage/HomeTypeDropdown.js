@@ -1,10 +1,40 @@
 import './HomePage.css';
+import React from 'react';
+import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem, MDBDropdownLink } from 'mdb-react-ui-kit';
 
 export default function HomeTypeDropdown({ setFilter }) {
     const handleClick = (value) => {
         setFilter(value)
     }
 
+    return (
+        <MDBDropdown>
+            <MDBDropdownToggle className="drop-down">pick by type</MDBDropdownToggle>
+            <MDBDropdownMenu className="drop-down">
+                <MDBDropdownItem><MDBDropdownLink onClick={() => handleClick("Bug")}>Bug</MDBDropdownLink></MDBDropdownItem>
+                <MDBDropdownItem><MDBDropdownLink onClick={() => handleClick("Dark")}>Dark</MDBDropdownLink></MDBDropdownItem>
+                <MDBDropdownItem><MDBDropdownLink onClick={() => handleClick("Dragon")}>Dragon</MDBDropdownLink></MDBDropdownItem>
+                <MDBDropdownItem><MDBDropdownLink onClick={() => handleClick("Electric")}>Electric</MDBDropdownLink></MDBDropdownItem>
+                <MDBDropdownItem><MDBDropdownLink onClick={() => handleClick("Fairy")}>Fairy</MDBDropdownLink></MDBDropdownItem>
+                <MDBDropdownItem><MDBDropdownLink onClick={() => handleClick("Fighting")}>Fighting</MDBDropdownLink></MDBDropdownItem>
+                <MDBDropdownItem><MDBDropdownLink onClick={() => handleClick("Fire")}>Fire</MDBDropdownLink></MDBDropdownItem>
+                <MDBDropdownItem><MDBDropdownLink onClick={() => handleClick("Flying")}>Flying</MDBDropdownLink></MDBDropdownItem>
+                <MDBDropdownItem><MDBDropdownLink onClick={() => handleClick("Ghost")}>Ghost</MDBDropdownLink></MDBDropdownItem>
+                <MDBDropdownItem><MDBDropdownLink onClick={() => handleClick("Grass")}>Grass</MDBDropdownLink></MDBDropdownItem>
+                <MDBDropdownItem><MDBDropdownLink onClick={() => handleClick("Ground")}>Ground</MDBDropdownLink></MDBDropdownItem>
+                <MDBDropdownItem><MDBDropdownLink onClick={() => handleClick("Ice")}>Ice</MDBDropdownLink></MDBDropdownItem>
+                <MDBDropdownItem><MDBDropdownLink onClick={() => handleClick("Normal")}>Normal</MDBDropdownLink></MDBDropdownItem>
+                <MDBDropdownItem><MDBDropdownLink onClick={() => handleClick("Poison")}>Poison</MDBDropdownLink></MDBDropdownItem>
+                <MDBDropdownItem><MDBDropdownLink onClick={() => handleClick("Psychic")}>Psychic</MDBDropdownLink></MDBDropdownItem>
+                <MDBDropdownItem><MDBDropdownLink onClick={() => handleClick("Rock")}>Rock</MDBDropdownLink></MDBDropdownItem>
+                <MDBDropdownItem><MDBDropdownLink onClick={() => handleClick("Steel")}>Steel</MDBDropdownLink></MDBDropdownItem>
+                <MDBDropdownItem><MDBDropdownLink onClick={() => handleClick("Water")}>Water</MDBDropdownLink></MDBDropdownItem>
+            </MDBDropdownMenu>
+        </MDBDropdown>
+    );
+}
+
+/*
     return (
         <div>
             <label for="types">Or choose a type:</label>
@@ -29,5 +59,4 @@ export default function HomeTypeDropdown({ setFilter }) {
                 <option value="Water" onClick={() => handleClick("Water")}>Water</option>
             </select>
         </div>
-    );
-}
+    ); */
