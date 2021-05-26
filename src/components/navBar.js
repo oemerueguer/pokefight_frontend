@@ -7,11 +7,13 @@ function Nav(props) {
   return (
      <nav className="Nav">
          <ul className="Navlink">
-           <Link to="about">
-             <li>About</li>
-           </Link>
+           <li><img src=""/></li>
+
            <Link to="home">
-             <li>Home</li>
+             <li className="text-warning">Home</li>
+           </Link>
+           <Link to="about">
+             <li className="text-warning">About</li>
            </Link>   
          </ul>
      </nav>  

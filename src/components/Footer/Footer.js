@@ -4,15 +4,19 @@ import '../Footer/Footer.css';
 
 export default function App() {
   return (
-    <MDBFooter backgroundColor='' className='text-center text-lg-left bg-danger'>
+    <MDBFooter backgroundColor='' className='text-center text-lg-left bg-danger mt-5'>
       <MDBContainer className='p-4 '>
         <MDBRow>
           <MDBCol lg='6' md='12' className='mb-4 mb-md-0'>
-            <h5 className='text-uppercase text-warning'>About Us</h5>
-            <p className="text-warning">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis molestias.
-                Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam voluptatem veniam, est
-                atque cumque eum delectus sint!
+            <h5 className='text-uppercase text-warning'>Contact</h5>
+            <p className="text-warning"><i class="fas fa-map-pin mr"></i>
+            Weiskopffstraße 16, 12459 Berlin
+            </p>
+            <p className="text-warning"><i class="fas fa-phone mr"></i>
+            030 123456789
+            </p>
+            <p className="text-warning"><i class="fas fa-envelope mr"></i>
+            lorem@ipsum.com
             </p>
           </MDBCol>
 
