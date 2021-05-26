@@ -4,8 +4,8 @@ import '../Footer/Footer.css';
 
 export default function App() {
   return (
-    <MDBFooter backgroundColor='' className='YellowColor text-center text-lg-left bg-danger'>
-      <MDBContainer className='p-4'>
+    <MDBFooter backgroundColor='' className='text-center text-lg-left bg-danger'>
+      <MDBContainer className='p-4 '>
         <MDBRow>
           <MDBCol lg='6' md='12' className='mb-4 mb-md-0'>
             <h5 className='text-uppercase text-warning'>About Us</h5>
@@ -55,7 +55,7 @@ export default function App() {
         </MDBRow>
       </MDBContainer>
 
-      <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+      <div className='text-center p-3 text-warning' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
         &copy; {new Date().getFullYear()} Copyright by{' '}
         <a className='text-warning' href='https://github.com/oemerueguer/pokefight_frontend'>
           Group 3
