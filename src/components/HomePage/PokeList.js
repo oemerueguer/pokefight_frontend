@@ -1,10 +1,11 @@
+import "./HomePage.css";
 import Pokemon from "../Pokemon/Pokemon";
 
 export default function PokeList({ data, filter }) {
   let randSelection = [];
   if (data && !filter) {
     let pokemons = data;
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 12; i++) {
       const randomNumber = Math.floor(Math.random() * pokemons.length);
       const pokemon = pokemons[randomNumber];
       if (randSelection.includes(pokemon)) i--;
@@ -18,8 +19,8 @@ export default function PokeList({ data, filter }) {
         ) || pokemon.name.english.toLowerCase().includes(filter.toLowerCase())
     );
     console.log(filteredList);
-    if (filteredList.length >= 10) {
-      for (let i = 1; i <= 10; i++) {
+    if (filteredList.length >= 12) {
+      for (let i = 1; i <= 12; i++) {
         const randomNumber = Math.floor(Math.random() * filteredList.length);
         const pokemon = filteredList[randomNumber];
         if (randSelection.includes(pokemon)) i--;
@@ -32,7 +33,7 @@ export default function PokeList({ data, filter }) {
   }
 
   return (
-    <div className="pokelist">
+    <div className="wrapper">
       {randSelection.length > 0 ? (
         randSelection.map((pokemon) => {
           return <Pokemon pokemon={pokemon} />;
