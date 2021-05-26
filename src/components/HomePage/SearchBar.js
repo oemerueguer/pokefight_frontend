@@ -1,7 +1,14 @@
-export default function SearchBar() {
+import './HomePage.css';
+
+export default function SearchBar({filter, setFilter}) {
+    
+    const handleChange = (e) => {
+        setFilter(e.target.value);
+    }
+    
     return (
         <div className="searchbar">
-            <input type="text" placeholder="type or pokemon" />
+            <input type="text" value={filter} onChange={handleChange} placeholder="enter name/type" className="user-input"/>
         </div>
     );
 }

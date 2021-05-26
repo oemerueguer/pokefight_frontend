@@ -1,5 +1,5 @@
 import "../Instruction/Instruction.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function Instruction() {
   return (
@@ -10,9 +10,9 @@ export default function Instruction() {
           <h3>Read and then start the game </h3>
           <p>
             First of all, you need to choose a Pokemon by selecting on the
-            desired pokemon and clicking SELECT. Afterwards, choose
-            another one with whom you want to fight with. Finally, you can click
-            on FIGHT button.
+            desired pokemon and clicking SELECT. Afterwards, choose another one
+            with whom you want to fight with. Finally, you can click on FIGHT
+            button.
             <br />
             <br />
             To start the game, click on A Button.
@@ -34,10 +34,12 @@ export default function Instruction() {
           </button>
         </div>
         <div className="PressBoard">
-         <Link to="/home"><button className="aPress">A</button></Link>
+          <Link to="/home">
+            <button className="aPress">A</button>
+          </Link>
           <button className="bPress">B</button>
         </div>
-        </div>
+      </div>
     </>
   );
 }

@@ -17,7 +17,7 @@ export default function App() {
           </MDBCol>
 
           <MDBCol lg='6' md='12' className='mb-4 mb-md-0'>
-            <h5 className='text-uppercase text-warning'>Contributor</h5>
+            <h5 className='text-uppercase text-warning'>Contributors</h5>
 
             <ul className='list-unstyled mb-0 text-left'>
               <li>
