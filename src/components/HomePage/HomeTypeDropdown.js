@@ -1,5 +1,3 @@
-import Dropdown from 'react-dropdown';
-import 'react-dropdown/style.css';
 import './HomePage.css';
 
 export default function HomeTypeDropdown({ setFilter }) {

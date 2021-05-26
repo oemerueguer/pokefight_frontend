@@ -45,13 +45,6 @@
     visibility: hidden;
 }
 
-.drop-down {
-    font-family: 'Karma', sans-serif;
-}
-.drop-down option {
-    font-family: 'Karma', sans-serif;
-}
-
 .bug {
     background: #92BC2C;
     box-shadow: 0 0 20px #92BC2C;
