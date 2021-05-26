@@ -1,3 +1,7 @@
+.user-input {
+    font-family: 'Karma', sans-serif;
+}
+
 .wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -32,12 +36,20 @@
 }
 
 .tool-tip {
+    font-family: 'Karma', sans-serif;
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
     text-align: center;
     visibility: hidden;
+}
+
+.drop-down {
+    font-family: 'Karma', sans-serif;
+}
+.drop-down option {
+    font-family: 'Karma', sans-serif;
 }
 
 .bug {
@@ -128,4 +140,10 @@
 .water {
     background: #539DDF;
     box-shadow: 0 0 20px #539DDF;
+}
+
+.pokelist {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }

@@ -28,8 +28,8 @@ function App() {
         <Route exact path="/"><Instruction /></Route>
         <Route exact path="/home" ><HomePage data={data} filter={filter} setFilter={setFilter} /></Route>
         <Route exact path="/pokemon/:id"><Pokemon /></Route>
-        <Route exact path= "/footer"><Footer /></Route>
       </Switch>
+      <Footer />
     </div>
   );
 }
