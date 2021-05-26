@@ -21,7 +21,7 @@
     cursor: pointer;
 }
 
-.icon:hover .tooltip {
+.icon:hover .tool-tip {
     visibility: visible;
 }
 
@@ -31,7 +31,7 @@
     margin: 20%;
 }
 
-.tooltip {
+.tool-tip {
     position: absolute;
     left: 0;
     right: 0;
