@@ -1,3 +1,8 @@
+.imgHeight{
+    max-height: 300px;
+}
+
+
 @media only screen and (max-width: 760px) { 
     .mobile-opt {
         margin: 3% auto;
