@@ -14,9 +14,22 @@
     text-align: center !important;
     padding-left: 20%;
 }
+.borderRadius {
+    border-radius: 30% 30% 0 0;
+}
 
-@media only screen and (max-width: 450px) { 
+
+@media only screen and (max-width: 710px) { 
     .Footer {
         margin-top: 10% !important;
+    }
+    .footerParagraph {
+        padding-left: 0%;
+    }
+    .mobile-margin{
+        margin-bottom: 2%;
+    }
+    .mobMargin {
+        margin-top: 2%;
     }
 }
