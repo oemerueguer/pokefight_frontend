@@ -62,7 +62,7 @@ export default function PokeList({ data, filter }) {
     setOpponentPokemon(false);
   };
 
-  const handleClickFight = () => {
+  const handleClickFight = (event) => {
     if (firstPokemon && secondPokemon) {
       console.log("The fight begins...");
     } else {
