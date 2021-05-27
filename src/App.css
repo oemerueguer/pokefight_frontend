@@ -42,7 +42,7 @@
   align-items: center;
   min-height: 10vh;
   width: 100%;
-  background-color: #ef5350;
+  background-color:#f93154;
   color: #c62828;
   font-family: karma;
   border-radius: 0 0 50% 50%;
@@ -55,4 +55,7 @@
     align-items: center;
     list-style: none;
     color: #feca1b;
+  }
+  .mob-opt {
+    margin-left: 4%;
   }

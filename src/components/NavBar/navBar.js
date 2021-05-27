@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './NavBar.css';
 
 function Nav(props) {
   return (
@@ -10,10 +11,10 @@ function Nav(props) {
            </Link>
 
            <Link to="home">
-             <li className="text-warning">Home</li>
+             <li className="text-warning mob-opt">Home</li>
            </Link>
            <Link to="about">
-             <li className="text-warning">About</li>
+             <li className="text-warning mob-opt">About</li>
            </Link>   
          </ul>
      </nav>  
