@@ -5,7 +5,7 @@ export default function PokeList({ data, filter }) {
     for (let i = 1; i <= 10; i++) {
       const randomNumber = Math.floor(Math.random() * pokemons.length);
       const pokemon = pokemons[randomNumber];
-      if (randSelection.includes(pokemon)) i--
+      if (randSelection.includes(pokemon)) i--;
       else randSelection.push(pokemon);
     }
   } else if (data && filter) {
@@ -15,7 +15,7 @@ export default function PokeList({ data, filter }) {
       for (let i = 1; i <= 10; i++) {
         const randomNumber = Math.floor(Math.random() * filteredList.length);
         const pokemon = filteredList[randomNumber];
-        if (randSelection.includes(pokemon)) i--
+        if (randSelection.includes(pokemon)) i--;
         else randSelection.push(pokemon);
       }
     } else {

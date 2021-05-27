@@ -3,6 +3,9 @@
     text-align: center;
     width: 150px
 }
+.home {
+    margin-top: 5%;
+}
 
 .wrapper {
     display: flex;
