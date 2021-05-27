@@ -21,6 +21,10 @@
   background-image: linear-gradient(white, black, #ef5350);
 }
 */
+.logo {
+  width: 100px;
+  height:100px;
+}
 
 .hLogo {
   position: relative;

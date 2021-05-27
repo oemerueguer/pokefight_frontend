@@ -37,7 +37,7 @@ export default function App() {
                 </a>
               </li>
               <li>
-              <a href='https://github.com/bullgr-1926' target="_blank" rel="noreferrer" className='text-warning text-left'>
+              <a href='https://github.com/oemerueguer' target="_blank" rel="noreferrer" className='text-warning text-left'>
               <i class="fab fa-github"></i>
                   Ömer Ügür
                 </a>

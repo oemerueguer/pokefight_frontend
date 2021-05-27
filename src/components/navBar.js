@@ -7,7 +7,9 @@ function Nav(props) {
   return (
      <nav className="Nav">
          <ul className="Navlink">
-           <li><img src=""/></li>
+           <Link to='/'>
+           <li><img className="logo" src="newLogo.png" alt="Logo"/></li>
+           </Link>
 
            <Link to="home">
              <li className="text-warning">Home</li>

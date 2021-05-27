@@ -2,7 +2,7 @@ import React from "react";
 import {
   MDBContainer,
   MDBRow,
-  MDBButton,
+  MDBBtn,
   MDBCard,
   MDBCardBody,
   MDBCardImage,
@@ -10,12 +10,13 @@ import {
   MDBCardText,
   MDBCol,
 } from "mdb-react-ui-kit";
+import './About.css';
 
 const About = () => {
   return (
-    <MDBContainer className="p-4 ">
+    <MDBContainer className="p-4">
       <MDBRow>
-        <MDBCol lg='3' md='12' className='mb-4 mb-md-0 mt-2' style={{ maxWidth: "22rem" }}>
+        <MDBCol lg='3' md='12' className='mb-4 mb-md-0 mt-2 mobile-opt' style={{ maxWidth: "22rem" }}>
           <MDBCard>
             <MDBCardImage
               className="img-fluid"
@@ -24,14 +25,15 @@ const About = () => {
             />
             <MDBCardBody>
               <MDBCardTitle>Jasmin Mingers</MDBCardTitle>
-              <MDBCardText>
+              <MDBCardText className="posTitle">
                Full - Stack Developer
               </MDBCardText>
+              <MDBBtn className="bg-danger" href="https://github.com/Jasmin262"><i class="fab fa-github"></i>GitHub</MDBBtn>
             </MDBCardBody>
           </MDBCard>
         </MDBCol>
 
-        <MDBCol lg='3' md='12' className='mb-4 mb-md-0 mt-2' style={{ maxWidth: "22rem" }}>
+        <MDBCol lg='3' md='12' className='mb-4 mb-md-0 mt-2 mobile-opt' style={{ maxWidth: "22rem" }}>
           <MDBCard>
             <MDBCardImage
               className="img-fluid"
@@ -43,11 +45,12 @@ const About = () => {
               <MDBCardText>
                Full - Stack Developer
               </MDBCardText>
+              <MDBBtn className="bg-danger" href="https://github.com/ClemensDinkel"><i class="fab fa-github"></i>GitHub</MDBBtn>
             </MDBCardBody>
           </MDBCard>
         </MDBCol>
 
-        <MDBCol lg='3' md='12' className='mb-4 mb-md-0 mt-2' style={{ maxWidth: "22rem" }}>
+        <MDBCol lg='3' md='12' className='mb-4 mb-md-0 mt-2 mobile-opt' style={{ maxWidth: "22rem" }}>
           <MDBCard>
             <MDBCardImage
               className="img-fluid"
@@ -59,11 +62,12 @@ const About = () => {
               <MDBCardText>
                Full - Stack Developer
               </MDBCardText>
+              <MDBBtn className="bg-danger" href="https://github.com/bullgr-1926"><i class="fab fa-github"></i>GitHub</MDBBtn>
             </MDBCardBody>
           </MDBCard>
         </MDBCol>
 
-        <MDBCol lg='3' md='12' className='mb-4 mb-md-0 mt-2' style={{ maxWidth: "22rem" }}>
+        <MDBCol lg='3' md='12' className='mb-4 mb-md-0 mt-2 mobile-opt' style={{ maxWidth: "22rem" }}>
           <MDBCard>
             <MDBCardImage
               className="img-fluid"
@@ -75,11 +79,12 @@ const About = () => {
               <MDBCardText>
                Full - Stack Developer
               </MDBCardText>
+              <MDBBtn className="bg-danger" href="https://github.com/jahanalem"><i class="fab fa-github"></i>GitHub</MDBBtn>
             </MDBCardBody>
           </MDBCard>
         </MDBCol>
 
-        <MDBCol lg='3' md='12' className='mb-4 mb-md-0 mt-2' style={{ maxWidth: "22rem" }}>
+        <MDBCol lg='3' md='12' className='mb-4 mb-md-0 mt-2 mobile-opt' style={{ maxWidth: "22rem" }}>
           <MDBCard>
             <MDBCardImage
               className="img-fluid"
@@ -91,6 +96,7 @@ const About = () => {
               <MDBCardText>
                Full - Stack Developer
               </MDBCardText>
+              <MDBBtn className="bg-danger" href="https://github.com/oemerueguer"><i class="fab fa-github"></i>GitHub</MDBBtn>
             </MDBCardBody>
           </MDBCard>
         </MDBCol>
