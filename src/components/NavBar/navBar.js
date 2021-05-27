@@ -9,7 +9,6 @@ function Nav(props) {
            <Link to='/'>
            <li><img className="logo" src="newLogo.png" alt="Logo"/></li>
            </Link>
-
            <Link to="home">
              <li className="text-warning mob-opt">Home</li>
            </Link>

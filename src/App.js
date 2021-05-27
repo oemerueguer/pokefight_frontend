@@ -38,8 +38,9 @@ function App() {
       <Switch>
         <Route exact path="/"><Instruction /></Route>
         <Route exact path="/home" ><HomePage data={data} filter={filter} setFilter={setFilter} /></Route>
+        <Route exact path="/about"><About /></Route>
         <Route exact path="/pokemon/:id"><Pokemon /></Route>
-        <Route exact path="/about"><About/></Route>
+ 
       </Switch>
       <Footer />
     </div>
