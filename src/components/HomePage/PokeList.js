@@ -2,6 +2,7 @@ import "./HomePage.css";
 import { useState } from "react";
 import Pokemon from "../Pokemon/Pokemon";
 import PokemonsToFight from "../Pokemon/PokemonsToFight";
+import { MDBBtn } from "mdb-react-ui-kit";
 
 export default function PokeList({ data, filter }) {
   const [firstPokemon, setFirstPokemon] = useState(0);
@@ -51,16 +52,22 @@ export default function PokeList({ data, filter }) {
     }
   };
 
-  const handleRemovePokemon = (
-    firstPokemonId,
-    secondPokemonId,
-    firstPokemonBoolean,
-    secondPokemonBoolean
-  ) => {
-    setFirstPokemon(firstPokemonId);
-    setSecondPokemon(secondPokemonId);
-    setOurPokemon(firstPokemonBoolean);
-    setOpponentPokemon(secondPokemonBoolean);
+  const handleClickOurPokemon = () => {
+    setFirstPokemon(0);
+    setOurPokemon(false);
+  };
+
+  const handleClickOpponentPokemon = () => {
+    setSecondPokemon(0);
+    setOpponentPokemon(false);
+  };
+
+  const handleClickFight = () => {
+    if (firstPokemon && secondPokemon) {
+      console.log("The fight begins...");
+    } else {
+      console.log("You need two pokemons to begin the fight !");
+    }
   };
 
   return (
@@ -68,21 +75,32 @@ export default function PokeList({ data, filter }) {
       <div>
         <br />
         <br />
-        <PokemonsToFight
-          firstPokemon={firstPokemon}
-          secondPokemon={secondPokemon}
-          ourPokemon={ourPokemon}
-          opponentPokemon={opponentPokemon}
-          handleRemovePokemon={handleRemovePokemon}
-        />
+        {ourPokemon || opponentPokemon ? (
+          <div>
+            <h1>
+              {firstPokemon} VS {secondPokemon}
+            </h1>
+            <MDBBtn onClick={handleClickOurPokemon}>Remove Our Pokemon</MDBBtn>
+            <MDBBtn onClick={handleClickOpponentPokemon}>
+              Remove Opponent Pokemon
+            </MDBBtn>
+            <MDBBtn onClick={handleClickFight}>Fight</MDBBtn>
+          </div>
+        ) : (
+          <div></div>
+        )}
         <br />
         <br />
       </div>
       <div className="wrapper">
         {randSelection.length > 0 ? (
-          randSelection.map((pokemon) => {
+          randSelection.map((pokemon, index) => {
             return (
-              <Pokemon pokemon={pokemon} handleAddPokemon={handleAddPokemon} />
+              <Pokemon
+                key={index}
+                pokemon={pokemon}
+                handleAddPokemon={handleAddPokemon}
+              />
             );
           })
         ) : (
