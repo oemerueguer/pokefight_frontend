@@ -3,13 +3,13 @@
   background-color: #3761a8;
 }
 
-.head {
+/*.head {
   height: auto;
   /* background-color: #ef5350; */
-  color: white;
+ /* color: white;
   box-sizing: border-box;
-  min-height: 80vh;
   position: relative;
+  min-height:10vh;
   width: 100%;
   height:100%;
   display: flex;
@@ -19,6 +19,11 @@
   border-radius: 50%;
   transform-origin: bottom;
   background-image: linear-gradient(white, black, #ef5350);
+}
+*/
+.logo {
+  width: 100px;
+  height:100px;
 }
 
 .hLogo {
@@ -39,8 +44,8 @@
   width: 100%;
   background-color: #ef5350;
   color: #c62828;
-  margin-top: 400px;
   font-family: karma;
+  border-radius: 0 0 50% 50%;
   }
   
   .Navlink {
@@ -49,4 +54,5 @@
     justify-content: space-around;
     align-items: center;
     list-style: none;
+    color: #feca1b;
   }

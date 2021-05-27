@@ -1,32 +1,47 @@
-
 import './App.css';
-import HeaderExampleUsersIcon from './components/header';
-import Nav from './components/navBar';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import About from './components/about';
+import axios from 'axios';
+import HeaderExampleUsersIcon from './components/Header/header';
+import Nav from './components/NavBar/navBar';
+import { useState, useEffect } from 'react'
+import { Switch, Route, useLocation } from 'react-router-dom';
+import HomePage from './components/HomePage/HomePage';
+import Instruction from './components/Instruction/Instruction'
+import Footer from './components/Footer/Footer';
+import Pokemon from './components/Pokemon/Pokemon';
 
 
 function App() {
+  const [data, setData] = useState(null);
+  const [filter, setFilter] = useState("");
+  let location = useLocation();
+
+  const fetchData = async () => {
+    await axios.get(`https://whispering-everglades-58228.herokuapp.com/pokemon`)
+      .then(response => {
+        console.log(response.data);
+        setData(response.data);
+      })
+      .catch(error => console.error(error))
+  }
+
+  useEffect(() => fetchData(), [])
+
   return (
     <div className="App">
-    <HeaderExampleUsersIcon />
-    <Router>
-      
-        <Nav />
-        <Switch>
-          <Route path="/" exact components={Home} />
-          <Route path="/about" component={About} />
-        </Switch>
-     
-    </Router>
+      {location.pathname !== "/" &&
+        <>
+          <Nav />
+          {/*<HeaderExampleUsersIcon />*/}
+        </>
+      }
+      <Switch>
+        <Route exact path="/"><Instruction /></Route>
+        <Route exact path="/home" ><HomePage data={data} filter={filter} setFilter={setFilter} /></Route>
+        <Route exact path="/pokemon/:id"><Pokemon /></Route>
+      </Switch>
+      <Footer />
     </div>
   );
 }
-
-const Home = () => {
-  <div>
-    <h1>Home</h1>
-  </div>;
-};
 
 export default App;
