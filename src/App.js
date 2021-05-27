@@ -30,8 +30,8 @@ function App() {
     <div className="App">
       {location.pathname !== "/" &&
         <>
-          <HeaderExampleUsersIcon />
           <Nav />
+          {/*<HeaderExampleUsersIcon />*/}
         </>
       }
       <Switch>
