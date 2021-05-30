@@ -8,6 +8,7 @@ import HomePage from './components/HomePage/HomePage';
 import Instruction from './components/Instruction/Instruction'
 import Footer from './components/Footer/Footer';
 import Pokemon from './components/Pokemon/Pokemon';
+import Pokeball from './components/Pokeball/pokeball';
 
 
 function App() {

@@ -4,6 +4,8 @@ import PokeList from './PokeList';
 import SearchBar from './SearchBar';
 import './HomePage.css';
 import useBreakpoint from '../../customHooks/useBreakpoint'
+import Pokeball from '../Pokeball/pokeball';
+
 
 export default function HomePage({ data, filter, selection, setFilter }) {
   const point = useBreakpoint();
@@ -17,6 +19,7 @@ export default function HomePage({ data, filter, selection, setFilter }) {
         : <HomeTypeDropdown setFilter={setFilter}/>
       }
       <PokeList data={data} selection={selection} filter={filter} />
+      <Pokeball />
     </div>
   );
 }

@@ -7,15 +7,13 @@ export default function Instruction() {
       <div className="gameboy">
         <div className="gameboyScreen">
           <h2>Welcome to our PokeBattle </h2>
-          <h3>Read and then start the game </h3>
+          <h3>Read before starting the game </h3>
           <p>
-            First of all, you need to choose a Pokemon by selecting on the
-            desired pokemon and clicking SELECT. Afterwards, choose another one
-            with whom you want to fight with. Finally, you can click on FIGHT
-            button.
+            First of all, you can choose a Pokemon by their element or directly by name via searchbar. After you have selected your desired Pokemon click SELECT. Afterwards choose the Pokemon you want
+            to fight against. Finally click the FIGHT button.
             <br />
             <br />
-            To start the game, click on A Button.
+            To start the game press A!
           </p>
         </div>
         <div className="gameboyGrey"></div>
