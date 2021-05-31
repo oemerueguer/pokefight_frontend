@@ -94,17 +94,9 @@ export default function PokeList({ data, filter }) {
           </div>
           <MDBContainer className="selectComponents">
             <MDBRow className="playGround"> 
-              <MDBCol>           
-              <MDBBtn>Attack</MDBBtn>
-              <MDBBtn>Defense</MDBBtn>
-              </MDBCol>
-            </MDBRow>
             <MDBCol>
               <MDBBtn onClick={handleClickOurPokemon}>
                 Remove Our Pokemon
-              </MDBBtn>
-              <MDBBtn onClick={handleClickOpponentPokemon}>
-                Remove Opponent Pokemon
               </MDBBtn>
               <MDBBtn
                 className="bg-danger startGame"
@@ -112,7 +104,11 @@ export default function PokeList({ data, filter }) {
               >
                 Fight
               </MDBBtn>
+              <MDBBtn onClick={handleClickOpponentPokemon}>
+                Remove Opponent Pokemon
+              </MDBBtn>
             </MDBCol>
+            </MDBRow>
           </MDBContainer>
         </div>
       ) : (
@@ -121,6 +117,7 @@ export default function PokeList({ data, filter }) {
       <MDBContainer className="PokemonWrapper">
         {randSelection.length > 0 ? (
           randSelection.map((pokemon, index) => {
+
             return (
               <Pokemon
                 key={index}
@@ -132,6 +129,7 @@ export default function PokeList({ data, filter }) {
         ) : (
           <p>catching pokemons...</p>
         )}
+
       </MDBContainer>
     </>
   );
