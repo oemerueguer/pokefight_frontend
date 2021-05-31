@@ -9,13 +9,15 @@ function Nav(props) {
            <Link to='/'>
            <li><img className="logo" src="newLogo.png" alt="Logo"/></li>
            </Link>
-
            <Link to="home">
              <li className="text-warning mob-opt">Home</li>
            </Link>
            <Link to="about">
              <li className="text-warning mob-opt">About</li>
-           </Link>   
+           </Link>
+           <Link to="leaderboard">
+             <li className="text-warning mob-opt">Leaderboard</li>
+           </Link>      
          </ul>
      </nav>  
     

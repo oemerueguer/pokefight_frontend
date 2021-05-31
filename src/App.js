@@ -9,6 +9,10 @@ import Instruction from './components/Instruction/Instruction'
 import Footer from './components/Footer/Footer';
 import Pokemon from './components/Pokemon/Pokemon';
 import Pokeball from './components/Pokeball/pokeball';
+import About from './components/About/about';
+import Leaderboard from './components/Leaderboard/Leaders';
+
+
 
 
 function App() {
@@ -38,7 +42,10 @@ function App() {
       <Switch>
         <Route exact path="/"><Instruction /></Route>
         <Route exact path="/home" ><HomePage data={data} filter={filter} setFilter={setFilter} /></Route>
+        <Route exact path="/about"><About /></Route>
+        <Route exact path="/leaderboard"><Leaderboard /></Route>
         <Route exact path="/pokemon/:id"><Pokemon /></Route>
+ 
       </Switch>
       <Footer />
     </div>

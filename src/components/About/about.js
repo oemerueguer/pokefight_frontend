@@ -11,6 +11,11 @@ import {
   MDBCol,
 } from "mdb-react-ui-kit";
 import './About.css';
+import  Jasmin from '../Images/misty.png';
+import  Clemens from '../Images/ash.png';
+import  Stavros from '../Images/samuel_eich.png';
+import  Said from '../Images/rocko.png';
+import  Omer from '../Images/kiawe.png';
 
 const About = () => {
   return (
@@ -19,8 +24,8 @@ const About = () => {
         <MDBCol lg='3' md='12' className='mb-4 mb-md-0 mt-2 mobile-opt' style={{ maxWidth: "22rem" }}>
           <MDBCard>
             <MDBCardImage
-              className="img-fluid"
-              src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
+              className="img-fluid imgHeight"
+              src={Jasmin}
               waves
             />
             <MDBCardBody>
@@ -36,8 +41,8 @@ const About = () => {
         <MDBCol lg='3' md='12' className='mb-4 mb-md-0 mt-2 mobile-opt' style={{ maxWidth: "22rem" }}>
           <MDBCard>
             <MDBCardImage
-              className="img-fluid"
-              src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
+              className="img-fluid imgHeight"
+              src={Clemens}
               waves
             />
             <MDBCardBody>
@@ -53,8 +58,8 @@ const About = () => {
         <MDBCol lg='3' md='12' className='mb-4 mb-md-0 mt-2 mobile-opt' style={{ maxWidth: "22rem" }}>
           <MDBCard>
             <MDBCardImage
-              className="img-fluid"
-              src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
+              className="img-fluid imgHeight"
+              src={Stavros}
               waves
             />
             <MDBCardBody>
@@ -70,8 +75,8 @@ const About = () => {
         <MDBCol lg='3' md='12' className='mb-4 mb-md-0 mt-2 mobile-opt' style={{ maxWidth: "22rem" }}>
           <MDBCard>
             <MDBCardImage
-              className="img-fluid"
-              src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
+              className="img-fluid imgHeight"
+              src={Said}
               waves
             />
             <MDBCardBody>
@@ -87,8 +92,8 @@ const About = () => {
         <MDBCol lg='3' md='12' className='mb-4 mb-md-0 mt-2 mobile-opt' style={{ maxWidth: "22rem" }}>
           <MDBCard>
             <MDBCardImage
-              className="img-fluid"
-              src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
+              className="img-fluid imgHeight"
+              src={Omer}
               waves
             />
             <MDBCardBody>
