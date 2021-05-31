@@ -2,7 +2,8 @@ import "./HomePage.css";
 import { useState } from "react";
 import Pokemon from "../Pokemon/Pokemon";
 import PokemonsToFight from "../Pokemon/PokemonsToFight";
-import { MDBBtn } from "mdb-react-ui-kit";
+import { MDBContainer, MDBRow, MDBBtn, MDBCol } from "mdb-react-ui-kit";
+import "./PokeList.css";
 
 export default function PokeList({ data, filter }) {
   const [firstPokemon, setFirstPokemon] = useState(0);
@@ -72,27 +73,52 @@ export default function PokeList({ data, filter }) {
 
   return (
     <>
-      <div>
-        <br />
-        <br />
-        {ourPokemon || opponentPokemon ? (
-          <div>
-            <h1>
-              {firstPokemon} VS {secondPokemon}
-            </h1>
-            <MDBBtn onClick={handleClickOurPokemon}>Remove Our Pokemon</MDBBtn>
-            <MDBBtn onClick={handleClickOpponentPokemon}>
-              Remove Opponent Pokemon
-            </MDBBtn>
-            <MDBBtn onClick={handleClickFight}>Fight</MDBBtn>
+      {ourPokemon || opponentPokemon ? (
+        <div className="clashArea">
+          <div className="firstCard">
+            <h1>{firstPokemon}</h1>
+            <ul>
+              <li>HP</li>
+              <li>Attack</li>
+              <li>Defense</li>
+            </ul>
           </div>
-        ) : (
-          <div></div>
-        )}
-        <br />
-        <br />
-      </div>
-      <div className="wrapper">
+
+          <div className="secondCard">
+            <h1>{secondPokemon}</h1>
+            <ul>
+              <li>HP</li>
+              <li>Attack</li>
+              <li>Defense</li>
+            </ul>
+          </div>
+          <MDBContainer className="selectComponents">
+            <MDBRow className="playGround"> 
+              <MDBCol>           
+              <MDBBtn>Attack</MDBBtn>
+              <MDBBtn>Defense</MDBBtn>
+              </MDBCol>
+            </MDBRow>
+            <MDBCol>
+              <MDBBtn onClick={handleClickOurPokemon}>
+                Remove Our Pokemon
+              </MDBBtn>
+              <MDBBtn onClick={handleClickOpponentPokemon}>
+                Remove Opponent Pokemon
+              </MDBBtn>
+              <MDBBtn
+                className="bg-danger startGame"
+                onClick={handleClickFight}
+              >
+                Fight
+              </MDBBtn>
+            </MDBCol>
+          </MDBContainer>
+        </div>
+      ) : (
+        <div></div>
+      )}
+      <MDBContainer className="PokemonWrapper">
         {randSelection.length > 0 ? (
           randSelection.map((pokemon, index) => {
             return (
@@ -106,7 +132,7 @@ export default function PokeList({ data, filter }) {
         ) : (
           <p>catching pokemons...</p>
         )}
-      </div>
+      </MDBContainer>
     </>
   );
 }

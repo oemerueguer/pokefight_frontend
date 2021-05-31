@@ -14,7 +14,10 @@ function Nav(props) {
            </Link>
            <Link to="about">
              <li className="text-warning mob-opt">About</li>
-           </Link>   
+           </Link>
+           <Link to="leaderboard">
+             <li className="text-warning mob-opt">Leaderboard</li>
+           </Link>      
          </ul>
      </nav>  
     

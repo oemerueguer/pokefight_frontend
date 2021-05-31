@@ -7,6 +7,7 @@ import {
   MDBCardTitle,
   MDBCardText,
   MDBCol,
+  MDBRow
 } from "mdb-react-ui-kit";
 import './Pokemon.css';
 
@@ -17,9 +18,10 @@ export default function Pokemon(props) {
   };
 
   return (
-    <div className="PokemonWrapper">
-      <MDBCol lg='12' md='12' className='mb-4 mb-md-0 mt-2 PokeCard'>
-        <MDBCard style={{ width: "14rem" }}>
+    <>
+    <MDBRow className="PokemonWrapper">
+      <MDBCol lg='6' md='6' className='mb-4 mb-md-0 mt-2 PokeCard'>
+        <MDBCard>
           <MDBCardImage
             className="img-fluid"
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.pokemon.id}.png`}
@@ -66,6 +68,7 @@ export default function Pokemon(props) {
           </MDBCardBody>
         </MDBCard>
       </MDBCol>
-    </div>
+      </MDBRow>
+    </>
   );
 }
