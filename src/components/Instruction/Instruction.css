@@ -1,8 +1,8 @@
 html, body {
-    background-color: #3761a8 !important;
+   /* background-color: #3761a8 !important;*/
     /*color: #feca1b;*/
     color: black;
-}
+    }
 .gameboy {
     width: 50%;
     height: 800px;
