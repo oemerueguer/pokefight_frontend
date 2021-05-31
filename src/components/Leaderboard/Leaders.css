@@ -31,6 +31,11 @@
     display: inline-block;
     color: #3761a8;
 }
+.leaderBoard{
+    position: relative;
+    display: block;
+    width: 100%;
+}
 
 
 @media only screen and (max-width: 600px) {

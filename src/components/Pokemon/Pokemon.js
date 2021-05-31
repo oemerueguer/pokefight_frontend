@@ -19,46 +19,47 @@ export default function Pokemon(props) {
 
   return (
     <>
-    <MDBRow className="PokemonWrapper">
+    <div className="allPokemons">
+      <div className="PokemonWrapper">
       <MDBCol lg='6' md='6' className='mb-4 mb-md-0 mt-2 PokeCard'>
-        <MDBCard>
+        <MDBCard className="PokemonsCards">
           <MDBCardImage
             className="img-fluid"
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.pokemon.id}.png`}
           />
           <hr />
           <MDBCardBody>
-            <MDBCardTitle>{props.pokemon.name.english}</MDBCardTitle>
+            <MDBCardTitle className="PokemonCardTitle">{props.pokemon.name.english}</MDBCardTitle>
             <hr />
             <MDBCardText className="text-center pokemon-description">
-              <span>
+              <span className="pokemonStats">
                 HP:{"  "}
-                {props.pokemon.base.HP}
+                <p className="pokemonStatsNum">{props.pokemon.base.HP}</p>
               </span>
               <br />
-              <span>
+              <span  className="pokemonStats">
                 Attack:{"  "}
-                {props.pokemon.base.Attack}
+                <p className="pokemonStatsNum">{props.pokemon.base.Attack}</p>
               </span>
               <br />
-              <span>
+              <span  className="pokemonStats">
                 Defense:{"  "}
-                {props.pokemon.base.Defense}
+               <p className="pokemonStatsNum">{props.pokemon.base.Defense}</p>
               </span>
               <br />
-              <span>
-                Sp. Attack:{"  "}
-                {props.pokemon.base["Sp. Attack"]}
+              <span  className="pokemonStats">
+                Sp.Attack:{"  "}
+                <p className="pokemonStatsNum">{props.pokemon.base["Sp. Attack"]}</p>
               </span>
               <br />
-              <span>
-                Sp. Defense:{"  "}
-                {props.pokemon.base["Sp. Defense"]}
+              <span  className="pokemonStats">
+                Sp.Defense:{"  "}
+                <p className="pokemonStatsNum">{props.pokemon.base["Sp. Defense"]}</p>
               </span>
               <br />
-              <span>
+              <span  className="pokemonStats">
                 Speed:{"  "}
-                {props.pokemon.base.Speed}
+                <p className="pokemonStatsNum">{props.pokemon.base.Speed}</p>
               </span>
               <br />
               <br />
@@ -68,7 +69,8 @@ export default function Pokemon(props) {
           </MDBCardBody>
         </MDBCard>
       </MDBCol>
-      </MDBRow>
+      </div>
+      </div>
     </>
   );
 }

@@ -37,6 +37,12 @@ ul {
     margin-bottom: 2%;
     
 }
+.rmvBtn {
+    margin-right: 2%;
+}
+.rmvOpBtn {
+    margin-left: 2%;
+}
 
 @media only screen and (max-width: 600px) {
     .clashArea {

@@ -1,6 +1,5 @@
 import './App.css';
 import axios from 'axios';
-import HeaderExampleUsersIcon from './components/Header/header';
 import Nav from './components/NavBar/navBar';
 import { useState, useEffect } from 'react'
 import { Switch, Route, useLocation } from 'react-router-dom';

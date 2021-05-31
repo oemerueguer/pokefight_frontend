@@ -4,35 +4,52 @@
     width: 100%;
     padding: 10px;
   /*  margin: 0 auto; */
-    justify-content: space-between;
 }
-.PokemonMap {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 900px;
-    padding: 10px;
-  /*  margin: 0 auto; */
-    justify-content: center;
+.PokemonCardsTitle{
+    font-size: 18pt;
+}
+
+.PokemonsCards {
+    width:25vw;
+    height: 80%;
+    background-color: #FFA900;
+    border: 20px solid #3761a8;
 }
 .PokeCard {
     width: 30%;
 }
-
 .pokemon-description{
     margin: 0;
-    padding-left: 20%;
+    padding-left: 15%;   
+}
+.pokemonStats {
+    display: flex;
+}
+.pokemonStatsNum {
+    text-align: right;
+    padding-right: 10%;
 }
 
 
-/*@media only screen and (max-width: 760px) { 
-    .PokeCard {
-        width: 400px;
+@media only screen and (max-width: 760px) { 
+    .PokemonsCards {
+        width:50vw;
+        height: 80%;
+
     }
+    
 }
 @media only screen and (max-width: 450px) { 
-    .mobile-opt {
-        margin: 2% auto;
+    .PokemonsCards {
+        width:80vw;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
-*/
+@media only screen and (max-width: 360px) { 
+    .PokemonsCards {
+        width:80vw;
+    }
+}
+

@@ -78,24 +78,24 @@ export default function PokeList({ data, filter }) {
           <div className="firstCard">
             <h1>{firstPokemon}</h1>
             <ul>
-              <li>HP</li>
-              <li>Attack</li>
-              <li>Defense</li>
+              <li>HP:{firstPokemon.hp}</li>
+              <li>Attack:</li>
+              <li>Defense:</li>
             </ul>
           </div>
 
           <div className="secondCard">
             <h1>{secondPokemon}</h1>
             <ul>
-              <li>HP</li>
-              <li>Attack</li>
-              <li>Defense</li>
+              <li>HP:</li>
+              <li>Attack:</li>
+              <li>Defense:</li>
             </ul>
           </div>
           <MDBContainer className="selectComponents">
             <MDBRow className="playGround"> 
             <MDBCol>
-              <MDBBtn onClick={handleClickOurPokemon}>
+              <MDBBtn className="rmvBtn" onClick={handleClickOurPokemon}>
                 Remove Our Pokemon
               </MDBBtn>
               <MDBBtn
@@ -104,7 +104,7 @@ export default function PokeList({ data, filter }) {
               >
                 Fight
               </MDBBtn>
-              <MDBBtn onClick={handleClickOpponentPokemon}>
+              <MDBBtn className="rmvOpBtn"onClick={handleClickOpponentPokemon}>
                 Remove Opponent Pokemon
               </MDBBtn>
             </MDBCol>
