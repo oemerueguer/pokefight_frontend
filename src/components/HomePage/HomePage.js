@@ -7,7 +7,6 @@ import useBreakpoint from '../../customHooks/useBreakpoint'
 
 export default function HomePage({ data, filter, selection, setFilter }) {
   const point = useBreakpoint();
-  console.log(point)
   
   return (
     <div className="home">
