@@ -13,8 +13,8 @@ const Leaderboard = () => {
     await Axios.get(
       `https://afternoon-citadel-92130.herokuapp.com/game/leaderboard`
     )
-      .then((response) => console.log(response))
-      .then((response) => setLeader(response))
+      .then((response) => console.log(response.data))
+      .then((response) => setLeader(response.data))
       .catch((err) => console.log(err));
   };
 
@@ -31,15 +31,14 @@ const Leaderboard = () => {
           <span className="leaderBoardTitle-item">Wins</span>
         </div>
         {leader != null
-        ? leader.map(() => {
-            <div className="leaderboard">
-              <span className="leaderBoardTitle-item">{leader._id}</span>
-              <span className="leaderBoardTitle-item">Player</span>
-              <span className="leaderBoardTitle-item">Pokemon</span>
-              <span className="leaderBoardTitle-item">Wins</span>
-              </div>
-        
-          }): 'No scoring available'}
+        ? leader.map(() => { 'No scoring available'    
+          }):             
+          <div className="leaderboard">
+            <span className="leaderBoardTitle-item">Rank</span>
+            <span className="leaderBoardTitle-item">PlayerName</span>
+            <span className="leaderBoardTitle-item">Pokemon</span>
+            <span className="leaderBoardTitle-item">Wins</span>
+          </div>}
       </div>
     </>
   );

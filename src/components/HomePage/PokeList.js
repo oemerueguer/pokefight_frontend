@@ -78,7 +78,7 @@ export default function PokeList({ data, filter }) {
           <div className="firstCard">
             <h1>{firstPokemon}</h1>
             <ul>
-              <li>HP:{firstPokemon.hp}</li>
+              <li>HP:{firstPokemon}</li>
               <li>Attack:</li>
               <li>Defense:</li>
             </ul>
@@ -103,6 +103,12 @@ export default function PokeList({ data, filter }) {
                 onClick={handleClickFight}
               >
                 Fight
+              </MDBBtn>
+              <MDBBtn
+                className="bg-warning startGame"
+                onClick={handleClickFight}
+              >
+                Reset
               </MDBBtn>
               <MDBBtn className="rmvOpBtn"onClick={handleClickOpponentPokemon}>
                 Remove Opponent Pokemon
