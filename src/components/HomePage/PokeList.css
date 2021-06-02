@@ -15,20 +15,22 @@ ul {
 }
 
 .firstCard {
-    width: 49%;
+    width: 39%;
     height: 70%;
     border: 2px solid black;
-    margin-right: 1%;
+    margin-left: 5%;
     background-color: #FFA900;
     border: 20px solid #3761a8;
+    border-radius: 5%;
 }
 .secondCard {
-    width: 49%;
+    width: 39%;
     height: 70%;
     border: 2px solid black;
-    margin-left: 1%;
+    margin-left: 10%;
     background-color: #FFA900;
     border: 20px solid #3761a8;
+    border-radius: 5%;
 }
 .selectComponents {
     margin-top: 2%;

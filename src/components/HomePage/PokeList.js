@@ -77,6 +77,7 @@ export default function PokeList({ data, filter }) {
         <div className="clashArea">
           <div className="firstCard">
             <h1>{firstPokemon}</h1>
+            {console.log(firstPokemon)}
             <ul>
               <li>HP:{firstPokemon}</li>
               <li>Attack:</li>
