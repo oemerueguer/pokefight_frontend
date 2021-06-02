@@ -70,8 +70,9 @@ export default function PokeList({ data, filter }) {
       console.log(c1)
       // hp, attack, defense, speedAttack, speedDefense, speed
       let c2 = new Fighter(secondPokemon.name.english, secondPokemon.base.HP, secondPokemon.base.Attack, secondPokemon.base.Defense, secondPokemon.base["Sp. Attack"], secondPokemon.base["Sp. Defense"], secondPokemon.base.Speed)
+      console.log(c2)
       const BPSFIGHT = new Fight(c1, c2)
-      BPSFIGHT.doAttack()
+      BPSFIGHT.startFight()
     } else {
       console.log("You need two pokemons to begin the fight !");
     }
