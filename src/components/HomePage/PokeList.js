@@ -1,17 +1,22 @@
 import "./HomePage.css";
 import { useState } from "react";
 import Pokemon from "../Pokemon/Pokemon";
-import PokemonsToFight from "../Pokemon/PokemonsToFight";
 import { MDBBtn } from "mdb-react-ui-kit";
+import { Fight, Fighter } from "../Combat/Combat";
 
 export default function PokeList({ data, filter }) {
-  const [firstPokemon, setFirstPokemon] = useState(0);
-  const [secondPokemon, setSecondPokemon] = useState(0);
+  const [firstPokemon, setFirstPokemon] = useState(null);
+  const [secondPokemon, setSecondPokemon] = useState(null);
   const [ourPokemon, setOurPokemon] = useState(false);
   const [opponentPokemon, setOpponentPokemon] = useState(false);
 
+  // testing for possible good combos
+  /* console.log(data.filter(pokemon => pokemon.type.includes("Fire") && pokemon.type.includes("Flying")));
+  console.log(data.filter(pokemon => pokemon.type.includes("Bug") && pokemon.type.includes("Grass")));
+ */
+
   let randSelection = [];
-  if (data && !filter) {
+    if (data && !filter) {
     let pokemons = data;
     for (let i = 1; i <= 12; i++) {
       const randomNumber = Math.floor(Math.random() * pokemons.length);
@@ -40,31 +45,57 @@ export default function PokeList({ data, filter }) {
     console.log(randSelection);
   }
 
-  const handleAddPokemon = (pokemonId) => {
+  const handleAddPokemon = (pokemon) => {
     if (!ourPokemon) {
-      setFirstPokemon(pokemonId);
+      console.log(pokemon)
+      setFirstPokemon(pokemon);
       setOurPokemon(true);
-    } else {
-      if (!opponentPokemon) {
-        setSecondPokemon(pokemonId);
-        setOpponentPokemon(true);
-      }
+    } else if (!opponentPokemon) {
+      console.log(pokemon);
+      setSecondPokemon(pokemon);
+      setOpponentPokemon(true);
     }
   };
 
   const handleClickOurPokemon = () => {
-    setFirstPokemon(0);
+    setFirstPokemon(null);
     setOurPokemon(false);
   };
 
   const handleClickOpponentPokemon = () => {
-    setSecondPokemon(0);
+    setSecondPokemon(null);
     setOpponentPokemon(false);
   };
 
   const handleClickFight = (event) => {
     if (firstPokemon && secondPokemon) {
       console.log("The fight begins...");
+      console.log(firstPokemon)
+      let c1 = new Fighter(
+        firstPokemon.name.english, 
+        firstPokemon.base.HP, 
+        firstPokemon.base.Attack, 
+        firstPokemon.base.Defense, 
+        firstPokemon.base["Sp. Attack"], 
+        firstPokemon.base["Sp. Defense"], 
+        firstPokemon.base.Speed, 
+        firstPokemon.type
+        )
+      console.log(c1)
+      // hp, attack, defense, speedAttack, speedDefense, speed
+      let c2 = new Fighter(
+        secondPokemon.name.english, 
+        secondPokemon.base.HP, 
+        secondPokemon.base.Attack, 
+        secondPokemon.base.Defense, 
+        secondPokemon.base["Sp. Attack"], 
+        secondPokemon.base["Sp. Defense"], 
+        secondPokemon.base.Speed, 
+        secondPokemon.type
+        )
+      console.log(c2)
+      const BPSFIGHT = new Fight(c1, c2)
+      BPSFIGHT.startFight()
     } else {
       console.log("You need two pokemons to begin the fight !");
     }
@@ -77,9 +108,23 @@ export default function PokeList({ data, filter }) {
         <br />
         {ourPokemon || opponentPokemon ? (
           <div>
-            <h1>
-              {firstPokemon} VS {secondPokemon}
-            </h1>
+            <div className="vs">
+              <div className="vs-pok">{ourPokemon && firstPokemon ?
+                <>
+                  <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${firstPokemon.id}.png`} />
+                  <p>{firstPokemon.name.english}</p>
+                </>
+                : <p>your pokemon</p>
+              }
+              </div>
+              <h1>VS</h1>
+              <div className="vs-pok">{opponentPokemon && secondPokemon ?
+                <>
+                  <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${secondPokemon.id}.png`} />
+                  <p>{secondPokemon.name.english}</p>
+                </>
+                : "opponent"}</div>
+            </div>
             <MDBBtn onClick={handleClickOurPokemon}>Remove Our Pokemon</MDBBtn>
             <MDBBtn onClick={handleClickOpponentPokemon}>
               Remove Opponent Pokemon
