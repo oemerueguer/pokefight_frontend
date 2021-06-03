@@ -45,6 +45,7 @@ export class Fight {
         this.playerA.type.forEach(type => {
             // for each type that a pokemon has, it will get a bonus for every enemy type, that this type is strong against. The buff is applied to the attackSum.
             // e.g. Fletchinder (Fire, Flying) will get buffed 4x against Levanny (Bug, Grass) because each of Fletchinders types is strong against each of Leavanny's types.
+            // same happens for combat mali
             let typus = tbm.find(entry => entry.type === type);
             typus.bonus.forEach(bonus => {
                 if (this.playerB.type.some(oppType => oppType === bonus)) this.playerA.bm *= 1.25
