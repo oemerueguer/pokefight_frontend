@@ -1,4 +1,4 @@
-import tbm from './typeBoniMali'
+import tbm from './TypeBoniMali'
 
 export class Fighter {
     constructor(name, hp, attack, defense, specialAttack, specialDefense, speed, type) {
@@ -12,11 +12,12 @@ export class Fighter {
         this.type = type;
         this.spAttack = false;
         this.bm = 1;
+        this.pokeValue = (this.attack + this.defense)*2/3 + (this.specialAttack + this.specialDefense)*1/3 + this.speed + this.hp
     }
 
     attackSum() {
-        const randVal = Math.floor(Math.random() * 5)
-        this.spAttack = randVal >= 4; //boolean 4/5 false, 1/5 true
+        const randVal = Math.floor(Math.random() * 3)
+        this.spAttack = randVal >= 2; //boolean 2/3 false, 1/3 true, if change also change pokeValue
         this.spAttack && console.log("special attack!")
         let result = this.spAttack
             ? Math.floor(Math.random() * (this.specialAttack + this.speed / 2) * this.bm)
@@ -113,6 +114,8 @@ export class Fight {
                 console.log(`The enemy ${this.playerB.name} won!`);
             } else if (this.playerB.hp <= 0) {
                 console.log(`Your ${this.playerA.name} won!`);
+                console.log(`Your score is ${Math.floor(this.playerB.pokeValue/this.playerA.pokeValue*1000)}`)
+                alert(`Your ${this.playerA.name} won! Your score is ${Math.floor(this.playerB.pokeValue/this.playerA.pokeValue*1000)}.`)
             }
         }
     }
