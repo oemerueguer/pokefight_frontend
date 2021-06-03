@@ -27,8 +27,10 @@
     max-width: fit-content;
 }
 
-.page-wrapper p {
+.page-wrapper p, .page-wrapper li, .page-wrapper ul {
     font-size: large;
+    cursor: pointer;
+    margin: 0;
 }
 
 .icon {
