@@ -41,11 +41,11 @@ export default function PokeList({selection}) {
 
   return (
     <>
+      {(ourPokemon || opponentPokemon) && 
       <div>
         <br />
         <br />
-        {ourPokemon || opponentPokemon ? (
-          <div>
+          <div className="test">
             <h1>
               {firstPokemon} VS {secondPokemon}
             </h1>
@@ -55,12 +55,10 @@ export default function PokeList({selection}) {
             </MDBBtn>
             <MDBBtn onClick={handleClickFight}>Fight</MDBBtn>
           </div>
-        ) : (
-          <div></div>
-        )}
         <br />
         <br />
       </div>
+      }
       <div className="wrapper">
         {selection ? (
           selection.map((pokemon, index) => {

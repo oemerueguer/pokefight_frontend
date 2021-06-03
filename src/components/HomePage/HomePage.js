@@ -4,6 +4,7 @@ import PokeList from './PokeList';
 import SearchBar from './SearchBar';
 import './HomePage.css';
 import useBreakpoint from '../../customHooks/useBreakpoint';
+// for alternate pagination
 import HandPagination from './HandPagination';
 import { Pagination } from 'semantic-ui-react';
 import { useEffect, useState } from 'react'
@@ -17,21 +18,20 @@ export default function HomePage({ data }) {
   const [filteredPokemons, setFilteredPokemons] = useState(null)
   const point = useBreakpoint();
 
+  // if data is available filter and paginate data (if filter available) or just paginate
   useEffect(() => {
     if (data) {
-      console.log("got data")
-      if (filter) filterData()
-      else {
-        console.log(data);
-        setFilteredPokemons(data);
-        setTimeout(()=> {
-          console.log(filteredPokemons);
-          paginateData();
-        },10000)
-      }
-      console.log("filter changed")
-    } else console.log("awaiting data")
+      if (filter) filterData() 
+      else setFilteredPokemons(data);
+      setCurrentPage(1)
+    }
   }, [data, filter])
+  // whenever page or filter changes paginate
+  useEffect(() => {
+    if (filteredPokemons) {
+      paginateData();
+    }
+  }, [filteredPokemons, currentPage])
 
   const filterData = () => {
     let filteredList = data.filter(
@@ -41,15 +41,16 @@ export default function HomePage({ data }) {
         ) || pokemon.name.english.toLowerCase().includes(filter.toLowerCase())
     );
     setFilteredPokemons(filteredList);
-    paginateData();
   }
 
   const paginateData = () => {
     const indexOfLastPokemon = currentPage * pokemonsPerPage;
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
+    console.log(`currentPage: ${currentPage} indexoffirst: ${indexOfFirstPokemon} indexoflast: ${indexOfLastPokemon}`)
+    console.log(filteredPokemons)
     setSelection(filteredPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon))
-    console.log(selection)
   }
+  // for  pagination
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   return (
@@ -59,17 +60,18 @@ export default function HomePage({ data }) {
         ? <HomeTypeIcons setFilter={setFilter} />
         : <HomeTypeDropdown setFilter={setFilter} />
       }
-      <PokeList selection={selection} />
+      {/* <Pagination 
+        totalPages={filteredPokemons? filteredPokemons.length <= 10 ? filteredPokemons/pokemonsPerPage : 10 : 0}
+        ActivePage={currentPage}
+        onPageChange={(event, pageInfo) => setCurrentPage(pageInfo.activePage)}
+      /> */}
+      {/* alternate ready-made nicer but buggy pagination  */}
       <HandPagination
         pokemonsPerPage={pokemonsPerPage}
         totalPokemons={filteredPokemons ? filteredPokemons.length : 0}
         paginate={paginate}
       />
-      {/* <Pagination 
-        totalPages={10}
-        ActivePage={currentPage}
-        onPageChange={(event, pageInfo) => setCurrentPage(pageInfo.activePage)}
-      /> */}
+      <PokeList selection={selection ? selection : null} />
     </div>
   );
 }
