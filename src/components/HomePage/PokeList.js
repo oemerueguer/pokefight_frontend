@@ -4,46 +4,11 @@ import Pokemon from "../Pokemon/Pokemon";
 import { MDBBtn } from "mdb-react-ui-kit";
 import { Fight, Fighter } from "../Combat/Combat";
 
-export default function PokeList({ data, filter }) {
-  const [firstPokemon, setFirstPokemon] = useState(null);
-  const [secondPokemon, setSecondPokemon] = useState(null);
+export default function PokeList({ selection }) {
+  const [firstPokemon, setFirstPokemon] = useState(0);
+  const [secondPokemon, setSecondPokemon] = useState(0);
   const [ourPokemon, setOurPokemon] = useState(false);
   const [opponentPokemon, setOpponentPokemon] = useState(false);
-
-  // testing for possible good combos
-  /* console.log(data.filter(pokemon => pokemon.type.includes("Fire") && pokemon.type.includes("Flying")));
-  console.log(data.filter(pokemon => pokemon.type.includes("Bug") && pokemon.type.includes("Grass")));
- */
-
-  let randSelection = [];
-    if (data && !filter) {
-    let pokemons = data;
-    for (let i = 1; i <= 12; i++) {
-      const randomNumber = Math.floor(Math.random() * pokemons.length);
-      const pokemon = pokemons[randomNumber];
-      if (randSelection.includes(pokemon)) i--;
-      else randSelection.push(pokemon);
-    }
-  } else if (data && filter) {
-    let filteredList = data.filter(
-      (pokemon) =>
-        pokemon.type.some((type) =>
-          type.toLowerCase().includes(filter.toLowerCase())
-        ) || pokemon.name.english.toLowerCase().includes(filter.toLowerCase())
-    );
-    console.log(filteredList);
-    if (filteredList.length >= 12) {
-      for (let i = 1; i <= 12; i++) {
-        const randomNumber = Math.floor(Math.random() * filteredList.length);
-        const pokemon = filteredList[randomNumber];
-        if (randSelection.includes(pokemon)) i--;
-        else randSelection.push(pokemon);
-      }
-    } else {
-      randSelection = filteredList;
-    }
-    console.log(randSelection);
-  }
 
   const handleAddPokemon = (pokemon) => {
     if (!ourPokemon) {
@@ -72,27 +37,27 @@ export default function PokeList({ data, filter }) {
       console.log("The fight begins...");
       console.log(firstPokemon)
       let c1 = new Fighter(
-        firstPokemon.name.english, 
-        firstPokemon.base.HP, 
-        firstPokemon.base.Attack, 
-        firstPokemon.base.Defense, 
-        firstPokemon.base["Sp. Attack"], 
-        firstPokemon.base["Sp. Defense"], 
-        firstPokemon.base.Speed, 
+        firstPokemon.name.english,
+        firstPokemon.base.HP,
+        firstPokemon.base.Attack,
+        firstPokemon.base.Defense,
+        firstPokemon.base["Sp. Attack"],
+        firstPokemon.base["Sp. Defense"],
+        firstPokemon.base.Speed,
         firstPokemon.type
-        )
+      )
       console.log(c1)
       // hp, attack, defense, speedAttack, speedDefense, speed
       let c2 = new Fighter(
-        secondPokemon.name.english, 
-        secondPokemon.base.HP, 
-        secondPokemon.base.Attack, 
-        secondPokemon.base.Defense, 
-        secondPokemon.base["Sp. Attack"], 
-        secondPokemon.base["Sp. Defense"], 
-        secondPokemon.base.Speed, 
+        secondPokemon.name.english,
+        secondPokemon.base.HP,
+        secondPokemon.base.Attack,
+        secondPokemon.base.Defense,
+        secondPokemon.base["Sp. Attack"],
+        secondPokemon.base["Sp. Defense"],
+        secondPokemon.base.Speed,
         secondPokemon.type
-        )
+      )
       console.log(c2)
       const BPSFIGHT = new Fight(c1, c2)
       BPSFIGHT.startFight()
@@ -103,10 +68,10 @@ export default function PokeList({ data, filter }) {
 
   return (
     <>
-      <div>
-        <br />
-        <br />
-        {ourPokemon || opponentPokemon ? (
+      {(ourPokemon || opponentPokemon) &&
+        <div>
+          <br />
+          <br />
           <div>
             <div className="vs">
               <div className="vs-pok">{ourPokemon && firstPokemon ?
@@ -131,15 +96,13 @@ export default function PokeList({ data, filter }) {
             </MDBBtn>
             <MDBBtn onClick={handleClickFight}>Fight</MDBBtn>
           </div>
-        ) : (
-          <div></div>
-        )}
-        <br />
-        <br />
-      </div>
+          <br />
+          <br />
+        </div>
+      }
       <div className="wrapper">
-        {randSelection.length > 0 ? (
-          randSelection.map((pokemon, index) => {
+        {selection ? (
+          selection.map((pokemon, index) => {
             return (
               <Pokemon
                 key={index}
