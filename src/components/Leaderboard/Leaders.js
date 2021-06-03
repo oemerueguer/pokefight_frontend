@@ -2,8 +2,6 @@ import "./Leaders.css";
 import Axios from "axios";
 import { useEffect, useState } from "react";
 
-const Arr = [];
-console.log(Arr);
 
 const Leaderboard = () => {
   const [leader, setLeader] = useState([]);
@@ -17,7 +15,7 @@ const Leaderboard = () => {
     await Axios.get(
       `https://afternoon-citadel-92130.herokuapp.com/game/leaderboard`
     )
-      .then((response) => setLeader(response.data))
+      .then((response) => setLeader(response.data.sort()))
       .catch((error) => console.log(error));
 
   };
@@ -34,7 +32,7 @@ const Leaderboard = () => {
  }
  const compareScore = (leaderboard) 
 leader.sort(a,b) = b.score - a.score */}
-console.log(Arr.sort((a,b) => b - a))
+/*console.log(Arr.sort((a,b) => b - a))*/
 
   return (
     <>
@@ -68,7 +66,7 @@ console.log(Arr.sort((a,b) => b - a))
             <span className="leaderBoardTitle-item leader-listing">{listing.firstPokemon}</span>
             <span className="leaderBoardTitle-item leader-listing">{listing.secondPokemon}</span>
             <span className="leaderBoardTitle-item leader-listing">{listing.rounds}</span>
-            <span className="leaderBoardTitle-item leader-listing"onChange={playerScore}>{listing.score}</span>
+            <span className="leaderBoardTitle-item leader-listing">{listing.score}</span>
           </div>
             </>
           )
