@@ -112,6 +112,7 @@ export class Fight {
 
             if (this.playerA.hp <= 0) {
                 console.log(`The enemy ${this.playerB.name} won!`);
+                alert(`The enemy ${this.playerB.name} won!`)
             } else if (this.playerB.hp <= 0) {
                 console.log(`Your ${this.playerA.name} won!`);
                 console.log(`Your score is ${Math.floor(this.playerB.pokeValue/this.playerA.pokeValue*1000)}`)
