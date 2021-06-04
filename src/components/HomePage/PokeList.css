@@ -14,20 +14,25 @@ ul {
     list-style: none;
 }
 
+img {
+    width: 50%;
+    margin-left: 5%;
+}
+
 .firstCard {
     width: 39%;
-    height: 70%;
+    height: 50%;
     border: 2px solid black;
-    margin-left: 5%;
+    margin-left: 2%;
     background-color: #FFA900;
     border: 20px solid #3761a8;
     border-radius: 5%;
 }
 .secondCard {
     width: 39%;
-    height: 70%;
+    height: 50%;
     border: 2px solid black;
-    margin-left: 10%;
+    margin-left: 9%;
     background-color: #FFA900;
     border: 20px solid #3761a8;
     border-radius: 5%;
@@ -45,6 +50,11 @@ ul {
 .rmvOpBtn {
     margin-left: 2%;
 }
+.VS {
+   position: relative;
+   margin-top: 10%;
+   margin-left: 5%;
+}
 
 @media only screen and (max-width: 600px) {
     .clashArea {
@@ -60,6 +70,11 @@ ul {
         border: 10px solid #3761a8;
         border-radius: 8px;
     }
+    .VS {
+        position: relative;
+        margin-top: 10%;
+        margin-left: 2%;
+     }
   }
 
 @media only screen and (max-width: 450px) { 

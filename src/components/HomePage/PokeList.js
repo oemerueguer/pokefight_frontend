@@ -82,7 +82,7 @@ export default function PokeList({ selection }) {
         : "Choose your Pokemon"  
       }
         </div>
-
+        <div className="VS"><h1>VS</h1></div>
         <div className="secondCard">
           {secondPokemon ? 
           <>
