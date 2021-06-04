@@ -41,25 +41,25 @@ export default function PokeList({ data, filter }) {
     console.log(randSelection);
   }
 
-  const handleAddPokemon = (pokemonId) => {
+  const handleAddPokemon = (pokemon) => {
     if (!ourPokemon) {
-      setFirstPokemon(pokemonId);
+      console.log(pokemon)
+      setFirstPokemon(pokemon);
       setOurPokemon(true);
-    } else {
-      if (!opponentPokemon) {
-        setSecondPokemon(pokemonId);
+    } else if (!opponentPokemon) {
+      console.log(pokemon)
+        setSecondPokemon(pokemon);
         setOpponentPokemon(true);
       }
-    }
   };
 
   const handleClickOurPokemon = () => {
-    setFirstPokemon(0);
+    setFirstPokemon(null);
     setOurPokemon(false);
   };
 
   const handleClickOpponentPokemon = () => {
-    setSecondPokemon(0);
+    setSecondPokemon(null);
     setOpponentPokemon(false);
   };
 
