@@ -16,7 +16,6 @@ import Leaderboard from './components/Leaderboard/Leaders';
 
 function App() {
   const [data, setData] = useState(null);
-  const [filter, setFilter] = useState("");
   let location = useLocation();
 
   const fetchData = async () => {
@@ -40,7 +39,7 @@ function App() {
       }
       <Switch>
         <Route exact path="/"><Instruction /></Route>
-        <Route exact path="/home" ><HomePage data={data} filter={filter} setFilter={setFilter} /></Route>
+        <Route exact path="/home" ><HomePage data={data}/></Route>
         <Route exact path="/about"><About /></Route>
         <Route exact path="/leaderboard"><Leaderboard /></Route>
         <Route exact path="/pokemon/:id"><Pokemon /></Route>

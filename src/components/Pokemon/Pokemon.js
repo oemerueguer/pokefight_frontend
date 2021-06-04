@@ -12,10 +12,6 @@ import {
 import './Pokemon.css';
 
 export default function Pokemon(props) {
-  const handleClick = () => {
-    const pokemonId = props.pokemon.id;
-    props.handleAddPokemon(pokemonId);
-  };
 
   return (
     <>
@@ -65,7 +61,7 @@ export default function Pokemon(props) {
               <br />
             </MDBCardText>
             <hr />
-            <MDBBtn className="bg-danger" onClick={handleClick}>Select</MDBBtn>
+            <MDBBtn className="bg-danger" onClick={() => {props.handleAddPokemon(props.pokemon)}}>Select</MDBBtn>
           </MDBCardBody>
         </MDBCard>
       </MDBCol>

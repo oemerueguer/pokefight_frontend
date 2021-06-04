@@ -1,4 +1,4 @@
-import tbm from './typeBoniMali'
+import tbm from './TypeBoniMali'
 
 export class Fighter {
     constructor(name, hp, attack, defense, specialAttack, specialDefense, speed, type) {
