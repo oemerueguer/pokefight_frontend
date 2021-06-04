@@ -33,7 +33,7 @@ const About = () => {
               <MDBCardText className="posTitle">
                Full - Stack Developer
               </MDBCardText>
-              <MDBBtn className="bg-danger" href="https://github.com/Jasmin262"><i class="fab fa-github"></i>GitHub</MDBBtn>
+              <MDBBtn className="bg-danger" href="https://github.com/Jasmin262" target="_blank"><i class="fab fa-github"></i>GitHub</MDBBtn>
             </MDBCardBody>
           </MDBCard>
         </MDBCol>
@@ -50,7 +50,7 @@ const About = () => {
               <MDBCardText>
                Full - Stack Developer
               </MDBCardText>
-              <MDBBtn className="bg-danger" href="https://github.com/ClemensDinkel"><i class="fab fa-github"></i>GitHub</MDBBtn>
+              <MDBBtn className="bg-danger" href="https://github.com/ClemensDinkel" target="_blank"><i class="fab fa-github"></i>GitHub</MDBBtn>
             </MDBCardBody>
           </MDBCard>
         </MDBCol>
@@ -67,7 +67,7 @@ const About = () => {
               <MDBCardText>
                Full - Stack Developer
               </MDBCardText>
-              <MDBBtn className="bg-danger" href="https://github.com/bullgr-1926"><i class="fab fa-github"></i>GitHub</MDBBtn>
+              <MDBBtn className="bg-danger" href="https://github.com/bullgr-1926" target="_blank"><i class="fab fa-github"></i>GitHub</MDBBtn>
             </MDBCardBody>
           </MDBCard>
         </MDBCol>
@@ -84,7 +84,7 @@ const About = () => {
               <MDBCardText>
                Full - Stack Developer
               </MDBCardText>
-              <MDBBtn className="bg-danger" href="https://github.com/jahanalem"><i class="fab fa-github"></i>GitHub</MDBBtn>
+              <MDBBtn className="bg-danger" href="https://github.com/jahanalem" target="_blank"><i class="fab fa-github"></i>GitHub</MDBBtn>
             </MDBCardBody>
           </MDBCard>
         </MDBCol>
@@ -101,7 +101,7 @@ const About = () => {
               <MDBCardText>
                Full - Stack Developer
               </MDBCardText>
-              <MDBBtn className="bg-danger" href="https://github.com/oemerueguer"><i class="fab fa-github"></i>GitHub</MDBBtn>
+              <MDBBtn className="bg-danger" href="https://github.com/oemerueguer" target="_blank"><i class="fab fa-github"></i>GitHub</MDBBtn>
             </MDBCardBody>
           </MDBCard>
         </MDBCol>
