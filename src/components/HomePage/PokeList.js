@@ -5,8 +5,8 @@ import PokemonsToFight from "../Pokemon/PokemonsToFight";
 import { MDBBtn } from "mdb-react-ui-kit";
 
 export default function PokeList({ data, filter }) {
-  const [firstPokemon, setFirstPokemon] = useState(0);
-  const [secondPokemon, setSecondPokemon] = useState(0);
+  const [firstPokemon, setFirstPokemon] = useState([]);
+  const [secondPokemon, setSecondPokemon] = useState([]);
   const [ourPokemon, setOurPokemon] = useState(false);
   const [opponentPokemon, setOpponentPokemon] = useState(false);
 
@@ -40,13 +40,13 @@ export default function PokeList({ data, filter }) {
     console.log(randSelection);
   }
 
-  const handleAddPokemon = (pokemonId) => {
+  const handleAddPokemon = (pokemon) => {
     if (!ourPokemon) {
-      setFirstPokemon(pokemonId);
+      setFirstPokemon(pokemon.id);
       setOurPokemon(true);
     } else {
       if (!opponentPokemon) {
-        setSecondPokemon(pokemonId);
+        setSecondPokemon(pokemon.id);
         setOpponentPokemon(true);
       }
     }

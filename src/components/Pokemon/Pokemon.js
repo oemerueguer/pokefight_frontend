@@ -11,8 +11,8 @@ import {
 
 export default function Pokemon(props) {
   const handleClick = () => {
-    const pokemonId = props.pokemon.id;
-    props.handleAddPokemon(pokemonId);
+    const pokemon = props.pokemon;
+    props.handleAddPokemon(pokemon);
   };
 
   return (
